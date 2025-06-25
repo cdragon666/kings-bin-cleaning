@@ -1,145 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kings Bin Cleaning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Rubik', sans-serif;
-      background-color: #f8f8f8;
-      color: #333;
-      text-align: center;
+      background: #f7f7f7;
     }
     header {
-      background-color: #2e7d32;
+      background: #2f6f2f;
       color: white;
-      padding: 40px 20px;
+      padding: 20px 0;
+      text-align: center;
     }
-    header h1 {
-      font-size: 2.5em;
+    h1 {
       margin: 0;
+      font-size: 2em;
     }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+    .tagline {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: #dfffdf;
     }
-    .content {
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-    .flyer-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: -40px;
+    .flyer-container {
       position: relative;
+      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
     }
-    .button-container {
-      position: relative;
-      top: -80px;
-      margin-bottom: -40px;
-    }
-    .button {
-      display: inline-block;
-      padding: 15px 25px;
-      margin: 10px;
+    .flyer-container img {
+      width: 100%;
       border-radius: 8px;
-      font-size: 16px;
+      display: block;
+    }
+    .overlay-cover {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 90px;
+      background: #2f6f2f;
+      opacity: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      border-radius: 0 0 8px 8px;
+    }
+    .overlay-cover a {
+      background-color: #ffffff;
+      color: #2f6f2f;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
-      background-color: #25D366;
-      color: white;
-      transition: background-color 0.3s;
+      font-weight: bold;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s;
     }
-    .button:hover {
-      background-color: #1ebe5d;
-    }
-    .flyer-box {
-      background-color: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-    .flyer-box h2 {
-      color: #2e7d32;
-      margin-bottom: 10px;
-    }
-    .flyer-box p {
-      margin: 10px 0;
+    .overlay-cover a:hover {
+      background-color: #e2e2e2;
     }
     .testimonials {
-      margin: 40px auto;
-      max-width: 700px;
-    }
-    .testimonial {
       background-color: white;
-      padding: 20px;
-      margin: 15px auto;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 40px 20px;
+      text-align: center;
     }
-    .testimonial p {
-      margin: 0;
+    .testimonial-card {
+      background-color: #f1f1f1;
+      margin: 10px auto;
+      max-width: 500px;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+    .testimonial-card p {
       font-style: italic;
     }
-    .testimonial strong {
+    .testimonial-card strong {
       display: block;
       margin-top: 10px;
-      color: #2e7d32;
     }
     footer {
-      background-color: #2e7d32;
+      background: #2f6f2f;
       color: white;
-      padding: 15px;
-      font-size: 14px;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Kings Bin Cleaning</h1>
-    <p>When your bin needs to be <strong>Wheelie Clean!</strong></p>
+    <div class="tagline">When your bin needs to be <strong>Wheelie Clean!</strong></div>
   </header>
 
-  <div class="content">
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer-img">
-
-    <div class="button-container">
-      <a class="button" href="mailto:Kingsbincleaning@gmail.com?subject=Bin%20Cleaning%20Quote%20Request&body=Hi%20there%2C%20I'm%20interested%20in%20getting%20my%20bin%28s%29%20cleaned.%20Please%20send%20me%20more%20info." target="_blank">Get a Quote</a>
-      <a class="button" href="https://wa.me/447931566189?text=Hi%2C%20I'd%20like%20to%20book%20a%20bin%20cleaning%20service" target="_blank">Book via WhatsApp</a>
-    </div>
-
-    <div class="flyer-box">
-      <h2>Our Process</h2>
-      <p>Your bin will be cleaned every 4 weeks by our fully trained staff.</p>
-      <p>We wash, sanitise, and deodorise inside and out using our fully recyclable wash trailer — all on bin day.</p>
-      <p><strong>Service Area:</strong> Central Bedfordshire and surrounding counties</p>
-    </div>
-
-    <div class="testimonials">
-      <h2>What Our Customers Say</h2>
-      <div class="testimonial">
-        <p>“Absolutely brilliant service — my bins have never been cleaner!”</p>
-        <strong>– Sarah T., Dunstable</strong>
-      </div>
-      <div class="testimonial">
-        <p>“Professional, friendly and always on time. Highly recommended.”</p>
-        <strong>– Mark R., Leighton Buzzard</strong>
-      </div>
-      <div class="testimonial">
-        <p>“A great value for money. The special offer is a bonus!”</p>
-        <strong>– Claire M., Houghton Regis</strong>
-      </div>
+  <div class="flyer-container">
+    <img src="flyer.jpg" alt="Special offer flyer" />
+    <div class="overlay-cover">
+      <a href="https://wa.me/447931566189" target="_blank">Book via WhatsApp</a>
+      <a href="#">Get a Quote</a>
     </div>
   </div>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-card">
+      <p>"Fantastic service — the bins smell amazing! Would definitely recommend."</p>
+      <strong>— Jane M., Leighton Buzzard</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"So convenient having it done on bin day. Great value and super polite staff!"</p>
+      <strong>— Mark R., Dunstable</strong>
+    </div>
+    <div class="testimonial-card">
+      <p>"Quick, professional and reliable. My bins have never looked better."</p>
+      <strong>— Lisa T., Houghton Regis</strong>
+    </div>
+  </section>
 
   <footer>
     &copy; 2025 Kings Bin Cleaning. All rights reserved.
   </footer>
+
 </body>
 </html>
