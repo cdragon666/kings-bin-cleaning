@@ -21,6 +21,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Floating Reviews */
 .floating-reviews {
   position: fixed;
   top: 0;
@@ -28,52 +29,38 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  overflow: hidden;
   z-index: -1;
 }
 
 .review {
   position: absolute;
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 1rem;
+  background: rgba(200, 200, 200, 0.5);
+  color: #333;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
   animation: floatRandom 60s linear infinite;
+  white-space: nowrap;
 }
 
-.review:nth-child(1) {
-  top: 10%;
-  left: 5%;
-  animation-delay: 0s;
-}
-
-.review:nth-child(2) {
-  top: 30%;
-  left: 80%;
-  animation-delay: 10s;
-}
-
-.review:nth-child(3) {
-  top: 60%;
-  left: 20%;
-  animation-delay: 20s;
-}
-
-.review:nth-child(4) {
-  top: 80%;
-  left: 70%;
-  animation-delay: 30s;
-}
+.review:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+.review:nth-child(2) { top: 20%; left: 80%; animation-delay: 5s; }
+.review:nth-child(3) { top: 35%; left: 10%; animation-delay: 10s; }
+.review:nth-child(4) { top: 50%; left: 70%; animation-delay: 15s; }
+.review:nth-child(5) { top: 65%; left: 15%; animation-delay: 20s; }
+.review:nth-child(6) { top: 75%; left: 60%; animation-delay: 25s; }
+.review:nth-child(7) { top: 85%; left: 30%; animation-delay: 30s; }
+.review:nth-child(8) { top: 5%;  left: 90%; animation-delay: 35s; }
 
 @keyframes floatRandom {
   0%   { transform: translate(0, 0); }
   25%  { transform: translate(30vw, -10vh); }
-  50%  { transform: translate(-20vw, 20vh); }
-  75%  { transform: translate(25vw, 25vh); }
+  50%  { transform: translate(-20vw, 25vh); }
+  75%  { transform: translate(25vw, 15vh); }
   100% { transform: translate(0, 0); }
 }
 
+/* Footer Section */
 .contact-footer {
   text-align: center;
   background: #e8f5e9;
@@ -82,21 +69,36 @@ body {
 }
 
 .contact-footer h2 {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.2rem;
   color: #333;
+}
+
+.phone-text {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .contact-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
+}
+
+.contact-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #000;
 }
 
 .contact-button img {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 5px;
   transition: transform 0.2s ease;
 }
 
@@ -104,27 +106,30 @@ body {
   transform: scale(1.1);
 }
 
-/* 📱 MOBILE FIXES */
+/* Responsive Mobile Fixes */
 @media (max-width: 768px) {
   .flyer {
     width: 90%;
   }
 
   .review {
-    font-size: 0.85rem;
-  }
-
-  .whatsapp-button {
-    padding: 8px 16px;
-    font-size: 1rem;
-  }
-
-  .contact-button img {
-    width: 40px;
-    height: 40px;
+    font-size: 0.75rem;
   }
 
   .contact-footer h2 {
     font-size: 1rem;
+  }
+
+  .phone-text {
+    font-size: 1rem;
+  }
+
+  .contact-button img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .contact-button span {
+    font-size: 0.8rem;
   }
 }
