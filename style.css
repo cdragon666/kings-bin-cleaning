@@ -15,7 +15,7 @@ body {
   justify-content: flex-start;
 }
 
-/* === Flyer Header === */
+/* === Header === */
 .header {
   text-align: center;
   padding: 20px;
@@ -36,7 +36,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   pointer-events: none;
   z-index: 0;
@@ -53,16 +53,16 @@ body {
   border-radius: 0;
 }
 
-/* === Unique animation per review === */
-.review:nth-child(1) { top: 10%; left: 5%; animation: float1 60s linear infinite; }
-.review:nth-child(2) { top: 20%; left: 80%; animation: float2 65s linear infinite; }
-.review:nth-child(3) { top: 35%; left: 10%; animation: float3 70s linear infinite; }
-.review:nth-child(4) { top: 50%; left: 70%; animation: float4 75s linear infinite; }
-.review:nth-child(5) { top: 65%; left: 15%; animation: float5 80s linear infinite; }
-.review:nth-child(6) { top: 75%; left: 60%; animation: float6 85s linear infinite; }
-.review:nth-child(7) { top: 85%; left: 30%; animation: float7 90s linear infinite; }
-.review:nth-child(8) { top: 5%;  left: 90%; animation: float8 95s linear infinite; }
+.review:nth-child(1) { top: 10%; left: 5%; animation: float1 25s linear infinite; }
+.review:nth-child(2) { top: 20%; left: 80%; animation: float2 27s linear infinite; }
+.review:nth-child(3) { top: 35%; left: 10%; animation: float3 29s linear infinite; }
+.review:nth-child(4) { top: 50%; left: 70%; animation: float4 26s linear infinite; }
+.review:nth-child(5) { top: 65%; left: 15%; animation: float5 28s linear infinite; }
+.review:nth-child(6) { top: 75%; left: 60%; animation: float6 24s linear infinite; }
+.review:nth-child(7) { top: 85%; left: 30%; animation: float7 30s linear infinite; }
+.review:nth-child(8) { top: 5%;  left: 90%; animation: float8 31s linear infinite; }
 
+/* Unique keyframes */
 @keyframes float1 { 0%{transform:translate(0,0);}50%{transform:translate(30vw,-10vh);}100%{transform:translate(0,0);} }
 @keyframes float2 { 0%{transform:translate(0,0);}50%{transform:translate(-25vw,15vh);}100%{transform:translate(0,0);} }
 @keyframes float3 { 0%{transform:translate(0,0);}50%{transform:translate(15vw,25vh);}100%{transform:translate(0,0);} }
@@ -72,7 +72,7 @@ body {
 @keyframes float7 { 0%{transform:translate(0,0);}50%{transform:translate(20vw,-15vh);}100%{transform:translate(0,0);} }
 @keyframes float8 { 0%{transform:translate(0,0);}50%{transform:translate(-20vw,20vh);}100%{transform:translate(0,0);} }
 
-/* === Footer Section === */
+/* === Footer === */
 .contact-footer {
   text-align: center;
   background: #e8f5e9;
@@ -106,6 +106,7 @@ body {
   align-items: center;
   font-size: 0.9rem;
   color: #000;
+  text-decoration: none;
 }
 
 .contact-button img {
