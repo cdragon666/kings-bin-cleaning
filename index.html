@@ -15,7 +15,7 @@
 
     .container {
       padding: 40px 20px;
-      max-width: 500px;
+      max-width: 600px;
       margin: auto;
     }
 
@@ -31,16 +31,15 @@
 
     .flyer-container {
       position: relative;
-      display: inline-block;
-      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
     }
 
     .flyer {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      display: block;
+      transform: translateY(-40px); /* Move the image up to hide bottom */
     }
 
     .button-group {
@@ -48,9 +47,8 @@
       bottom: 0;
       left: 0;
       width: 100%;
+      padding: 15px 0 10px;
       background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f2f5f3 80%);
-      padding: 20px 0 10px;
-      box-sizing: border-box;
     }
 
     .button {
