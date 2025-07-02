@@ -15,9 +15,9 @@
 
     .floating-review {
       position: absolute;
-      color: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.12);
       font-style: italic;
-      font-size: 0.9em;
+      font-size: 0.85em;
       white-space: nowrap;
       z-index: 0;
     }
@@ -26,16 +26,27 @@
       position: relative;
       z-index: 1;
       max-width: 500px;
-      margin: 20px auto;
+      margin: 0 auto;
       padding: 20px;
       background-color: white;
       border-radius: 10px;
       text-align: center;
+      box-sizing: border-box;
     }
 
     .container img {
       max-width: 100%;
+      height: auto;
       border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      margin: 0.3em 0;
     }
 
     .buttons {
@@ -74,15 +85,33 @@
       font-size: 14px;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 500px) {
       .container {
         margin: 10px;
-        transform: scale(0.95);
+        padding: 15px;
+        transform: scale(0.98);
       }
 
-      .buttons {
-        flex-direction: column;
-        align-items: center;
+      h2 {
+        font-size: 1.2em;
+      }
+
+      p {
+        font-size: 0.95em;
+      }
+
+      .buttons a {
+        font-size: 0.9em;
+        padding: 6px 10px;
+      }
+
+      .buttons img {
+        width: 18px;
+        height: 18px;
+      }
+
+      .phone {
+        font-size: 13px;
       }
     }
   </style>
@@ -116,7 +145,7 @@
     ];
 
     const reviewElements = [];
-    const speeds = 0.3;
+    const speed = 0.3;
 
     function createReviewElement(text) {
       const el = document.createElement('div');
@@ -126,8 +155,8 @@
       el.style.top = `${Math.random() * window.innerHeight}px`;
       document.body.appendChild(el);
       const angle = Math.random() * 2 * Math.PI;
-      const dx = Math.cos(angle) * speeds;
-      const dy = Math.sin(angle) * speeds;
+      const dx = Math.cos(angle) * speed;
+      const dy = Math.sin(angle) * speed;
       return { el, dx, dy };
     }
 
@@ -140,12 +169,8 @@
         let x = parseFloat(review.el.style.left);
         let y = parseFloat(review.el.style.top);
 
-        if (x + review.el.clientWidth >= window.innerWidth || x <= 0) {
-          review.dx *= -1;
-        }
-        if (y + review.el.clientHeight >= window.innerHeight || y <= 0) {
-          review.dy *= -1;
-        }
+        if (x + review.el.clientWidth >= window.innerWidth || x <= 0) review.dx *= -1;
+        if (y + review.el.clientHeight >= window.innerHeight || y <= 0) review.dy *= -1;
 
         review.el.style.left = `${x + review.dx}px`;
         review.el.style.top = `${y + review.dy}px`;
