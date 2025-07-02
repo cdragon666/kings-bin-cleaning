@@ -1,112 +1,110 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .flyer {
-  width: 100%;
+  max-width: 100%;
+  width: 400px;
   height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .footer {
-  background-color: #e6f9ec;
+  background-color: #e6f9e6;
   text-align: center;
-  padding: 20px 10px;
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
 
-.footer h3 {
-  margin-top: 0;
-  font-size: 16px;
+.footer h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.footer .phone {
-  font-weight: bold;
-  margin: 10px 0;
+.phone {
+  font-size: 18px;
+  margin-bottom: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
-.footer .socials {
+.socials {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin: 15px 0;
+  gap: 40px;
+  margin-bottom: 10px;
   flex-wrap: wrap;
 }
 
-.footer .contact-button {
+.social-icon {
+  text-align: center;
   text-decoration: none;
   color: black;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.footer .contact-button img {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 4px;
+.social-icon img {
+  width: 40px;
+  height: 40px;
 }
 
-.floating-reviews {
-  position: absolute;
-  top: 0;
-  left: 100%;
-  white-space: nowrap;
-  animation: scrollReviews 40s linear infinite;
+.review-banner {
+  display: none;
 }
 
-.floating-reviews span {
-  display: inline-block;
-  margin: 0 20px;
-  color: #555;
-  font-size: 14px;
-  opacity: 0.7;
+.review-scroll-container {
+  display: none;
 }
 
-@keyframes scrollReviews {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@media (max-width: 600px) {
-  .floating-reviews {
-    bottom: 0;
-    top: auto;
-    width: 100%;
+@media (max-width: 768px) {
+  .review-scroll-container {
+    display: block;
     white-space: nowrap;
-    animation: scrollReviewsMobile 30s linear infinite;
-    left: 100%;
+    overflow: hidden;
+    width: 100%;
+    background-color: #e6f9e6;
+    padding: 10px 0;
+    box-sizing: border-box;
   }
 
-  @keyframes scrollReviewsMobile {
-    0% {
-      transform: translateX(0%);
+  .scrolling-reviews {
+    display: inline-block;
+    animation: scrollLeft 30s linear infinite;
+  }
+
+  .scrolling-reviews span {
+    display: inline-block;
+    margin: 0 30px;
+    font-size: 14px;
+    color: #555;
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(100%);
     }
-    100% {
+    to {
       transform: translateX(-100%);
     }
+  }
+
+  .flyer {
+    width: 95%;
+    height: auto;
   }
 }
