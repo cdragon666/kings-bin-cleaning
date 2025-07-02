@@ -6,79 +6,89 @@
   <title>Kings Bin Cleaning</title>
   <style>
     body {
-      margin: 0;
-      background-color: #f3f6f5;
+      background-color: #f2f6f3;
       font-family: Arial, sans-serif;
+      margin: 0;
       overflow: hidden;
+      height: 100vh;
       position: relative;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 420px;
       margin: 0 auto;
-      padding: 20px;
-      position: relative;
-      z-index: 2;
       text-align: center;
+      z-index: 2;
+      position: relative;
+      padding: 20px 10px;
+    }
+
+    .flyer {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     h1 {
-      margin-bottom: 10px;
+      font-size: 1.4rem;
+      margin: 15px 0 5px;
     }
 
-    img.flyer {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+    p {
+      font-size: 0.95rem;
+      margin: 0 0 15px;
+    }
+
+    .socials-label {
+      margin-top: 10px;
+      font-weight: bold;
     }
 
     .social-buttons {
-      margin-top: 15px;
-    }
-
-    .social-button {
-      display: inline-flex;
-      align-items: center;
-      margin: 5px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 20px;
-      background-color: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      cursor: pointer;
-      font-size: 14px;
-      transition: background-color 0.3s ease;
-    }
-
-    .social-button img {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-    }
-
-    .phone-number {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
       margin-top: 10px;
-      font-size: 14px;
-      color: #333;
+    }
+
+    .social-buttons a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: black;
+      font-size: 0.9rem;
+    }
+
+    .social-buttons img {
+      height: 20px;
+    }
+
+    .phone-line {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 8px;
+      font-size: 0.9rem;
     }
 
-    .phone-number img {
-      width: 20px;
-      height: 20px;
+    .phone-line img {
+      height: 18px;
       margin-right: 6px;
     }
 
-    .floating-review {
+    .review {
       position: absolute;
-      font-size: 13px;
-      color: rgba(0, 0, 0, 0.1);
       font-style: italic;
-      z-index: 0;
-      pointer-events: none;
+      font-size: 0.8rem;
+      color: #999;
+      opacity: 0.7;
+      z-index: 1;
       white-space: nowrap;
     }
   </style>
@@ -87,63 +97,62 @@
   <div class="container">
     <h1>Welcome to Kings Bin Cleaning</h1>
     <p>Your local, reliable bin cleaning service.</p>
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
-
-    <p><strong>Get a quote from any of our socials:</strong></p>
+    <img src="flyer.jpg" class="flyer" alt="Kings Bin Cleaning Flyer" />
+    <div class="socials-label">Get a quote from any of our socials:</div>
     <div class="social-buttons">
-      <a href="mailto:kingsbincleaning@gmail.com" class="social-button"><img src="gmail.png" alt="Gmail Icon" />Email</a>
-      <a href="https://wa.me/447931566189" class="social-button"><img src="whatsapp.png" alt="WhatsApp Icon" />WhatsApp</a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" class="social-button"><img src="facebook.png" alt="Facebook Icon" />Facebook</a>
+      <a href="mailto:kingsbincleaning@gmail.com"><img src="gmail.png" alt="Email">Email</a>
+      <a href="https://wa.me/447931566189"><img src="whatsapp.png" alt="WhatsApp">WhatsApp</a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr"><img src="facebook.png" alt="Facebook">Facebook</a>
     </div>
-
-    <div class="phone-number">
-      <img src="phone.png" alt="Phone Icon" />
-      Call or text: <strong>07931 566189</strong>
+    <div class="phone-line">
+      <img src="phone.png" alt="Phone"> Call or text: <strong style="margin-left: 4px;">07931 566189</strong>
     </div>
   </div>
 
-  <!-- Floating fake reviews -->
+  <!-- Fake floating reviews -->
   <script>
     const reviews = [
-      '"Brilliant service, smells lovely!" – Sophie',
-      '"Bins sparkling every month!" – Tom',
-      '"Never knew bins could be this clean!" – Lisa',
-      '"Affordable and reliable, what more could you ask?" – Jake',
-      '"Always on time and professional." – Carla',
-      '"My neighbour signed up after seeing mine!" – Steve',
-      '"Love not having to clean my own bins." – Rachel',
-      '"Professional and eco-friendly!" – Dave'
+      "“Brilliant service, smells lovely!” – Sophie",
+      "“Bins sparkling every month!” – Tom",
+      "“Never knew bins could be this clean!” – Lisa",
+      "“Affordable and reliable, what more could you ask?” – Jake",
+      "“Love not having to clean my own bins.” – Rachel",
+      "“My neighbour signed up after seeing mine!” – Steve",
+      "“Always on time and professional.” – Carla",
+      "“Professional and eco-friendly!” – Dave"
     ];
 
-    function createFloatingReview(text) {
-      const span = document.createElement('span');
-      span.className = 'floating-review';
-      span.innerText = text;
+    const body = document.body;
 
-      span.style.top = Math.random() * 90 + '%';
-      span.style.left = Math.random() * 90 + '%';
+    reviews.forEach(text => {
+      const el = document.createElement("div");
+      el.className = "review";
+      el.innerText = text;
+      el.style.top = `${Math.random() * window.innerHeight}px`;
+      el.style.left = `${Math.random() * window.innerWidth}px`;
 
-      const dx = (Math.random() - 0.5) * 0.5;
-      const dy = (Math.random() - 0.5) * 0.5;
-      let x = parseFloat(span.style.left);
-      let y = parseFloat(span.style.top);
+      const dx = (Math.random() - 0.5) * 0.6;
+      const dy = (Math.random() - 0.5) * 0.6;
 
-      document.body.appendChild(span);
+      let x = parseFloat(el.style.left);
+      let y = parseFloat(el.style.top);
 
       function move() {
-        if (x <= 0 || x >= 100) dx *= -1;
-        if (y <= 0 || y >= 100) dy *= -1;
         x += dx;
         y += dy;
-        span.style.left = x + '%';
-        span.style.top = y + '%';
+
+        if (x <= 0 || x + el.clientWidth >= window.innerWidth) dx *= -1;
+        if (y <= 0 || y + el.clientHeight >= window.innerHeight) dy *= -1;
+
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+
         requestAnimationFrame(move);
       }
 
-      move();
-    }
-
-    reviews.forEach(createFloatingReview);
+      requestAnimationFrame(move);
+      body.appendChild(el);
+    });
   </script>
 </body>
 </html>
