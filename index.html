@@ -59,7 +59,7 @@
 
     .container {
       text-align: center;
-      padding: 30px 20px;
+      padding: 30px 20px 80px;
       position: relative;
       z-index: 10;
     }
@@ -112,6 +112,30 @@
       height: 20px;
       margin-right: 8px;
     }
+
+    /* ✅ Sticky Call Bar */
+    .call-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px;
+      z-index: 100;
+    }
+
+    .call-bar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .call-bar a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -121,27 +145,4 @@
     <div class="review" style="top: 10%; left: 5%; animation: floatOne 30s linear infinite;">“Brilliant service, smells lovely!” – Sophie</div>
     <div class="review" style="top: 20%; left: 60%; animation: floatTwo 40s linear infinite;">“Bins sparkling every month!” – Tom</div>
     <div class="review" style="top: 40%; left: 30%; animation: floatThree 50s linear infinite;">“Never knew bins could be this clean!” – Lisa</div>
-    <div class="review" style="top: 60%; left: 70%; animation: floatFour 35s linear infinite;">“Always on time and polite.” – Daniel</div>
-    <div class="review" style="top: 70%; left: 15%; animation: floatFive 45s linear infinite;">“Affordable and reliable!” – Ayesha</div>
-    <div class="review" style="top: 85%; left: 50%; animation: floatTwo 38s linear infinite;">“Smells amazing after every visit!” – George</div>
-  </div>
-
-  <!-- Main content -->
-  <div class="container">
-    <h1>Welcome to Kings Bin Cleaning</h1>
-    <p>Your local, reliable bin cleaning service.</p>
-
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
-
-    <div class="socials">
-      <p>Get a quote from any of our socials:</p>
-      <div class="social-icons">
-        <a href="mailto:kingsbincleaning@gmail.com"><img src="gmail.png" alt="Email"/>Email</a>
-        <a href="https://wa.me/447931566189" target="_blank"><img src="whatsapp.png" alt="WhatsApp"/>WhatsApp</a>
-        <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank"><img src="facebook.png" alt="Facebook"/>Facebook</a>
-      </div>
-    </div>
-  </div>
-
-</body>
-</html>
+    <div class="r
