@@ -6,162 +6,144 @@
   <title>Kings Bin Cleaning</title>
   <style>
     body {
-      background: #f0f4f3;
-      font-family: Arial, sans-serif;
       margin: 0;
+      background-color: #f3f6f5;
+      font-family: Arial, sans-serif;
       overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+      text-align: center;
     }
 
     h1 {
-      margin-top: 30px;
-      font-size: 26px;
-      text-align: center;
+      margin-bottom: 10px;
     }
 
-    p {
-      margin: 5px 0 20px;
-      font-size: 16px;
-      color: #444;
-      text-align: center;
-    }
-
-    .flyer {
-      display: block;
-      max-width: 90%;
-      width: 400px;
+    img.flyer {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       border-radius: 10px;
-      box-shadow: 0 0 20px #ccc;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
     }
 
-    .contact-section {
-      text-align: center;
-      margin-top: 20px;
-      position: relative;
-      z-index: 2;
+    .social-buttons {
+      margin-top: 15px;
     }
 
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .contact-button {
-      display: flex;
+    .social-button {
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
       border-radius: 20px;
-      background: white;
-      border: 1px solid #ddd;
-      text-decoration: none;
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
       font-size: 14px;
-      color: black;
-      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      transition: background-color 0.3s ease;
     }
 
-    .contact-button:hover {
-      transform: scale(1.05);
-    }
-
-    .contact-button img {
+    .social-button img {
       width: 20px;
       height: 20px;
+      margin-right: 8px;
     }
 
-    .phone-line {
-      margin-top: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
+    .phone-number {
+      margin-top: 10px;
       font-size: 14px;
       color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    .phone-line img {
-      width: 18px;
-      height: 18px;
+    .phone-number img {
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
     }
 
-    .review {
+    .floating-review {
       position: absolute;
-      font-style: italic;
       font-size: 13px;
-      color: rgba(0, 0, 0, 0.15);
-      white-space: nowrap;
+      color: rgba(0, 0, 0, 0.1);
+      font-style: italic;
       z-index: 0;
       pointer-events: none;
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to Kings Bin Cleaning</h1>
-  <p>Your local, reliable bin cleaning service.</p>
+  <div class="container">
+    <h1>Welcome to Kings Bin Cleaning</h1>
+    <p>Your local, reliable bin cleaning service.</p>
+    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
 
-  <img class="flyer" src="flyer.jpg" alt="Kings Bin Cleaning Flyer" />
-
-  <div class="contact-section">
     <p><strong>Get a quote from any of our socials:</strong></p>
-    <div class="contact-buttons">
-      <a class="contact-button" href="mailto:kingsbincleaning@gmail.com">
-        <img src="gmail.png" alt="Email" /> Email
-      </a>
-      <a class="contact-button" href="https://wa.me/447931566189">
-        <img src="whatsapp.png" alt="WhatsApp" /> WhatsApp
-      </a>
-      <a class="contact-button" href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr">
-        <img src="facebook.png" alt="Facebook" /> Facebook
-      </a>
+    <div class="social-buttons">
+      <a href="mailto:kingsbincleaning@gmail.com" class="social-button"><img src="gmail.png" alt="Gmail Icon" />Email</a>
+      <a href="https://wa.me/447931566189" class="social-button"><img src="whatsapp.png" alt="WhatsApp Icon" />WhatsApp</a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" class="social-button"><img src="facebook.png" alt="Facebook Icon" />Facebook</a>
     </div>
-    <div class="phone-line">
+
+    <div class="phone-number">
       <img src="phone.png" alt="Phone Icon" />
       Call or text: <strong>07931 566189</strong>
     </div>
   </div>
 
-  <!-- Floating reviews -->
-  <div class="review">“Brilliant service, smells lovely!” – Sophie</div>
-  <div class="review">“Bins sparkling every month!” – Tom</div>
-  <div class="review">“Never knew bins could be this clean!” – Lisa</div>
-  <div class="review">“Affordable and reliable, what more could you ask?” – Jake</div>
-
+  <!-- Floating fake reviews -->
   <script>
-    const reviews = document.querySelectorAll('.review');
-    const velocities = [];
+    const reviews = [
+      '"Brilliant service, smells lovely!" – Sophie',
+      '"Bins sparkling every month!" – Tom',
+      '"Never knew bins could be this clean!" – Lisa',
+      '"Affordable and reliable, what more could you ask?" – Jake',
+      '"Always on time and professional." – Carla',
+      '"My neighbour signed up after seeing mine!" – Steve',
+      '"Love not having to clean my own bins." – Rachel',
+      '"Professional and eco-friendly!" – Dave'
+    ];
 
-    reviews.forEach(review => {
-      review.style.top = Math.random() * window.innerHeight + 'px';
-      review.style.left = Math.random() * window.innerWidth + 'px';
-      velocities.push({
-        dx: (Math.random() - 0.5) * 1.5,
-        dy: (Math.random() - 0.5) * 1.5
-      });
-    });
+    function createFloatingReview(text) {
+      const span = document.createElement('span');
+      span.className = 'floating-review';
+      span.innerText = text;
 
-    function animate() {
-      reviews.forEach((review, index) => {
-        const rect = review.getBoundingClientRect();
-        let x = rect.left + velocities[index].dx;
-        let y = rect.top + velocities[index].dy;
+      span.style.top = Math.random() * 90 + '%';
+      span.style.left = Math.random() * 90 + '%';
 
-        if (x <= 0 || x + rect.width >= window.innerWidth) velocities[index].dx *= -1;
-        if (y <= 0 || y + rect.height >= window.innerHeight) velocities[index].dy *= -1;
+      const dx = (Math.random() - 0.5) * 0.5;
+      const dy = (Math.random() - 0.5) * 0.5;
+      let x = parseFloat(span.style.left);
+      let y = parseFloat(span.style.top);
 
-        review.style.left = (rect.left + velocities[index].dx) + 'px';
-        review.style.top = (rect.top + velocities[index].dy) + 'px';
-      });
+      document.body.appendChild(span);
 
-      requestAnimationFrame(animate);
+      function move() {
+        if (x <= 0 || x >= 100) dx *= -1;
+        if (y <= 0 || y >= 100) dy *= -1;
+        x += dx;
+        y += dy;
+        span.style.left = x + '%';
+        span.style.top = y + '%';
+        requestAnimationFrame(move);
+      }
+
+      move();
     }
 
-    animate();
+    reviews.forEach(createFloatingReview);
   </script>
 </body>
 </html>
