@@ -29,38 +29,24 @@
       margin-bottom: 30px;
     }
 
-    .flyer-container {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    }
-
     .flyer {
       width: 100%;
       height: auto;
-      transform: translateY(-40px); /* Move the image up to hide bottom */
-    }
-
-    .button-group {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 0 10px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f2f5f3 80%);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
     }
 
     .button {
       background-color: #28a745;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 25px;
       border: none;
       border-radius: 6px;
       text-decoration: none;
       font-size: 16px;
-      margin: 5px;
-      cursor: pointer;
+      margin: 10px 10px 0 10px;
+      display: inline-block;
       transition: background-color 0.3s ease;
     }
 
@@ -83,13 +69,12 @@
     <h1>Welcome to Kings Bin Cleaning</h1>
     <p>Your local, reliable bin cleaning service.</p>
 
-    <div class="flyer-container">
-      <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer">
-      <div class="button-group">
-        <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="button">Get a Quote</a>
-        <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="button whatsapp">WhatsApp</a>
-      </div>
-    </div>
+    <!-- Your edited and saved flyer image -->
+    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer">
+
+    <!-- Buttons underneath the image -->
+    <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="button">Get a Quote</a>
+    <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="button whatsapp">WhatsApp</a>
   </div>
 
 </body>
