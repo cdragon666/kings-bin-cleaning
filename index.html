@@ -8,7 +8,6 @@
     body {
       background: #f0f4f3;
       font-family: Arial, sans-serif;
-      text-align: center;
       margin: 0;
       overflow: hidden;
     }
@@ -16,23 +15,32 @@
     h1 {
       margin-top: 30px;
       font-size: 26px;
+      text-align: center;
     }
 
     p {
       margin: 5px 0 20px;
       font-size: 16px;
       color: #444;
+      text-align: center;
     }
 
     .flyer {
+      display: block;
       max-width: 90%;
       width: 400px;
       border-radius: 10px;
       box-shadow: 0 0 20px #ccc;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-section {
+      text-align: center;
       margin-top: 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .contact-buttons {
@@ -86,19 +94,10 @@
       position: absolute;
       font-style: italic;
       font-size: 13px;
-      color: rgba(0, 0, 0, 0.2);
-      animation: float 30s linear infinite;
+      color: rgba(0, 0, 0, 0.15);
       white-space: nowrap;
+      z-index: 0;
       pointer-events: none;
-    }
-
-    @keyframes float {
-      0% {
-        transform: translate(0, 0) rotate(0deg);
-      }
-      100% {
-        transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg);
-      }
     }
   </style>
 </head>
@@ -127,11 +126,42 @@
     </div>
   </div>
 
-  <!-- Floating Reviews -->
-  <div class="review" style="top:10%; left:5%;">“Brilliant service, smells lovely!” – Sophie</div>
-  <div class="review" style="top:30%; right:10%;">“Bins sparkling every month!” – Tom</div>
-  <div class="review" style="bottom:20%; left:15%;">“Never knew bins could be this clean!” – Lisa</div>
-  <div class="review" style="bottom:5%; right:5%;">“Affordable and reliable, what more could you ask?” – Jake</div>
+  <!-- Floating reviews -->
+  <div class="review">“Brilliant service, smells lovely!” – Sophie</div>
+  <div class="review">“Bins sparkling every month!” – Tom</div>
+  <div class="review">“Never knew bins could be this clean!” – Lisa</div>
+  <div class="review">“Affordable and reliable, what more could you ask?” – Jake</div>
 
+  <script>
+    const reviews = document.querySelectorAll('.review');
+    const velocities = [];
+
+    reviews.forEach(review => {
+      review.style.top = Math.random() * window.innerHeight + 'px';
+      review.style.left = Math.random() * window.innerWidth + 'px';
+      velocities.push({
+        dx: (Math.random() - 0.5) * 1.5,
+        dy: (Math.random() - 0.5) * 1.5
+      });
+    });
+
+    function animate() {
+      reviews.forEach((review, index) => {
+        const rect = review.getBoundingClientRect();
+        let x = rect.left + velocities[index].dx;
+        let y = rect.top + velocities[index].dy;
+
+        if (x <= 0 || x + rect.width >= window.innerWidth) velocities[index].dx *= -1;
+        if (y <= 0 || y + rect.height >= window.innerHeight) velocities[index].dy *= -1;
+
+        review.style.left = (rect.left + velocities[index].dx) + 'px';
+        review.style.top = (rect.top + velocities[index].dy) + 'px';
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
