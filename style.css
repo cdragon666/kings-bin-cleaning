@@ -1,129 +1,141 @@
-body {
+/* === Global Reset === */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+}
+
+/* === Container === */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .flyer {
   width: 100%;
-  max-width: 500px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  display: block;
+  margin: 0 auto 20px;
 }
 
-footer {
-  background-color: #e3fae3;
-  padding: 20px;
+/* === Footer === */
+.footer {
+  background-color: #e5fbe5;
   text-align: center;
+  padding: 20px 10px;
   position: relative;
   overflow: hidden;
 }
 
-footer h2 {
-  margin: 0 0 10px;
+.footer h2 {
   font-size: 18px;
-}
-
-.phone-number {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 10px;
+}
+
+.footer .phone {
+  margin: 10px 0;
   font-weight: bold;
-  font-size: 16px;
 }
 
-.phone-number i {
-  margin-right: 8px;
-}
-
-.social-icons {
+.footer .icons {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.social-icons a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer .icons a {
   text-decoration: none;
-  color: black;
+  color: #000;
+  text-align: center;
   font-size: 14px;
 }
 
-.social-icons img {
+.footer .icons img {
   width: 40px;
   height: 40px;
-  margin-bottom: 5px;
+  display: block;
+  margin: 0 auto 5px;
 }
 
-.floating-review {
+/* === Reviews Floating on Desktop === */
+.review {
   position: absolute;
-  font-size: 14px;
   color: #555;
-  opacity: 0.7;
-  white-space: nowrap;
-  animation: floatRandom 60s linear infinite;
+  font-size: 14px;
+  opacity: 0.8;
+  padding: 4px 8px;
+  border-radius: 6px;
+  animation: float 20s infinite linear;
 }
 
-@keyframes floatRandom {
+@keyframes float {
   0% {
     transform: translate(0, 0);
   }
   25% {
-    transform: translate(30vw, -20vh);
+    transform: translate(30vw, -10vh);
   }
   50% {
-    transform: translate(-20vw, 30vh);
+    transform: translate(10vw, 10vh);
   }
   75% {
-    transform: translate(10vw, -10vh);
+    transform: translate(-20vw, -10vh);
   }
   100% {
     transform: translate(0, 0);
   }
 }
 
+/* === Mobile Reviews Slider === */
 @media (max-width: 768px) {
-  .floating-review {
-    animation: scrollLeft 15s linear infinite;
-    font-size: 13px;
-    color: #333;
-    opacity: 1;
+  .review {
+    position: relative;
+    animation: slideRight 15s linear infinite;
+    white-space: nowrap;
+    display: inline-block;
   }
 
-  @keyframes scrollLeft {
+  .review-container {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  @keyframes slideRight {
     0% {
-      left: 100vw;
+      transform: translateX(100%);
     }
     100% {
-      left: -100vw;
+      transform: translateX(-100%);
     }
   }
 
-  .footer-review-container {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    white-space: nowrap;
+  .footer {
+    padding-bottom: 60px;
   }
 
-  footer {
-    position: relative;
-    height: 150px;
+  .footer .icons {
+    gap: 20px;
+  }
+
+  .footer .icons a {
+    font-size: 12px;
+  }
+
+  .footer .icons img {
+    width: 32px;
+    height: 32px;
   }
 }
