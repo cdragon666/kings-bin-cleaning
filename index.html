@@ -8,177 +8,168 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f1f5f3;
       font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .floating-review {
-      position: absolute;
-      color: rgba(0, 0, 0, 0.12);
-      font-style: italic;
-      font-size: 0.85em;
-      white-space: nowrap;
-      z-index: 0;
+      background-color: #f5f9f7;
+      overflow-x: hidden;
     }
 
     .container {
       position: relative;
-      z-index: 1;
-      max-width: 500px;
+      max-width: 450px;
       margin: 0 auto;
       padding: 20px;
-      background-color: white;
-      border-radius: 10px;
+      z-index: 1;
       text-align: center;
-      box-sizing: border-box;
     }
 
-    .container img {
+    .floating-review {
+      position: absolute;
+      color: rgba(0, 0, 0, 0.2);
+      font-style: italic;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .floating-review span {
+      display: inline-block;
+    }
+
+    .title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 0.2em;
+    }
+
+    .subtitle {
+      font-size: 1em;
+      margin-bottom: 1em;
+      color: #666;
+    }
+
+    .flyer {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      position: relative;
     }
 
-    h2 {
-      font-size: 1.5em;
-      margin-bottom: 0.5em;
+    .socials {
+      margin-top: 20px;
+      z-index: 1;
+      position: relative;
     }
 
-    p {
-      margin: 0.3em 0;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 15px;
-      gap: 10px;
-    }
-
-    .buttons a {
+    .socials a {
       text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 20px;
+      margin: 5px;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      background-color: white;
       color: black;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
       font-weight: bold;
-      background-color: #f1f1f1;
-      display: inline-flex;
+    }
+
+    .phone-line {
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 6px;
-      box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.2s;
-    }
-
-    .buttons a:hover {
-      background-color: #ddd;
-    }
-
-    .buttons img {
-      width: 20px;
-      height: 20px;
-    }
-
-    .phone {
       margin-top: 10px;
       font-size: 14px;
     }
 
-    @media screen and (max-width: 500px) {
+    .phone-line img {
+      height: 16px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 500px) {
       .container {
-        margin: 10px;
-        padding: 15px;
-        transform: scale(0.98);
+        padding: 10px;
       }
 
-      h2 {
+      .title {
         font-size: 1.2em;
       }
 
-      p {
-        font-size: 0.95em;
-      }
-
-      .buttons a {
+      .subtitle {
         font-size: 0.9em;
-        padding: 6px 10px;
       }
 
-      .buttons img {
-        width: 18px;
-        height: 18px;
-      }
-
-      .phone {
-        font-size: 13px;
+      .socials a {
+        padding: 8px 12px;
+        font-size: 0.9em;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Welcome to Kings Bin Cleaning</h2>
-    <p>Your local, reliable bin cleaning service.</p>
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" />
-    <p><strong>Get a quote from any of our socials:</strong></p>
-    <div class="buttons">
-      <a href="mailto:kingsbincleaning@gmail.com"><img src="gmail.png" alt="Email" />Email</a>
-      <a href="https://wa.me/447931566189" target="_blank"><img src="whatsapp.png" alt="WhatsApp" />WhatsApp</a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank"><img src="facebook.png" alt="Facebook" />Facebook</a>
-    </div>
-    <div class="phone">
-      📞 Call or text: <strong>07931 566189</strong>
+    <div class="title">Welcome to Kings Bin Cleaning</div>
+    <div class="subtitle">Your local, reliable bin cleaning service.</div>
+    <img class="flyer" src="flyer.png" alt="Flyer" />
+    <div class="socials">
+      <div>Get a quote from any of our socials:</div>
+      <a href="mailto:kingsbincleaning@gmail.com">📧 Email</a>
+      <a href="https://wa.me/447931566189" target="_blank">🟢 WhatsApp</a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">🔵 Facebook</a>
+      <div class="phone-line">
+        <img src="phone.png" alt="Phone" />
+        <span>Call or text: <strong>07931 566189</strong></span>
+      </div>
     </div>
   </div>
 
+  <!-- Floating Reviews -->
   <script>
     const reviews = [
       '"Brilliant service, smells lovely!" – Sophie',
       '"Bins sparkling every month!" – Tom',
-      '"Never knew bins could be this clean!" – Lisa',
-      '"My neighbour signed up after seeing mine!" – Steve',
       '"Affordable and reliable, what more could you ask?" – Jake',
       '"Love not having to clean my own bins." – Rachel',
+      '"Never knew bins could be this clean!" – Lisa',
+      '"Always on time and professional." – Carla',
       '"Professional and eco-friendly!" – Dave',
-      '"Always on time and professional." – Carla'
+      '"My neighbour signed up after seeing mine!" – Steve',
     ];
 
-    const reviewElements = [];
-    const speed = 0.3;
+    for (let i = 0; i < reviews.length; i++) {
+      const span = document.createElement("div");
+      span.className = "floating-review";
+      span.innerHTML = `<span>${reviews[i]}</span>`;
 
-    function createReviewElement(text) {
-      const el = document.createElement('div');
-      el.className = 'floating-review';
-      el.textContent = text;
-      el.style.left = `${Math.random() * window.innerWidth}px`;
-      el.style.top = `${Math.random() * window.innerHeight}px`;
-      document.body.appendChild(el);
-      const angle = Math.random() * 2 * Math.PI;
-      const dx = Math.cos(angle) * speed;
-      const dy = Math.sin(angle) * speed;
-      return { el, dx, dy };
-    }
+      // Start at a random position
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      span.style.left = `${x}px`;
+      span.style.top = `${y}px`;
 
-    reviews.forEach(text => {
-      reviewElements.push(createReviewElement(text));
-    });
+      document.body.appendChild(span);
 
-    function animate() {
-      for (const review of reviewElements) {
-        let x = parseFloat(review.el.style.left);
-        let y = parseFloat(review.el.style.top);
+      // Random direction and speed
+      let dx = (Math.random() * 0.4 + 0.2) * (Math.random() < 0.5 ? 1 : -1);
+      let dy = (Math.random() * 0.4 + 0.2) * (Math.random() < 0.5 ? 1 : -1);
 
-        if (x + review.el.clientWidth >= window.innerWidth || x <= 0) review.dx *= -1;
-        if (y + review.el.clientHeight >= window.innerHeight || y <= 0) review.dy *= -1;
+      function animate() {
+        const rect = span.getBoundingClientRect();
+        let left = parseFloat(span.style.left);
+        let top = parseFloat(span.style.top);
 
-        review.el.style.left = `${x + review.dx}px`;
-        review.el.style.top = `${y + review.dy}px`;
+        if (rect.left <= 0 || rect.right >= window.innerWidth) dx *= -1;
+        if (rect.top <= 0 || rect.bottom >= window.innerHeight) dy *= -1;
+
+        span.style.left = `${left + dx}px`;
+        span.style.top = `${top + dy}px`;
+
+        requestAnimationFrame(animate);
       }
-      requestAnimationFrame(animate);
-    }
 
-    animate();
+      animate();
+    }
   </script>
 </body>
 </html>
