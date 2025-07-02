@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kings Bin Cleaning</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f5f3;
       margin: 0;
       padding: 0;
+      background-color: #f4f7f6;
+      font-family: Arial, sans-serif;
       text-align: center;
-    }
-
-    .container {
-      padding: 40px 20px;
-      max-width: 600px;
-      margin: auto;
+      color: #222;
     }
 
     h1 {
-      font-size: 30px;
+      margin-top: 30px;
+    }
+
+    img.flyer {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+    }
+
+    .social-section {
+      margin-top: 15px;
+      margin-bottom: 50px;
+    }
+
+    .social-section p {
+      font-weight: bold;
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 30px;
-    }
-
-    .flyer {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      margin-bottom: 15px;
-    }
-
-    .social-message {
-      font-size: 16px;
-      font-weight: bold;
-      margin: 10px 0 15px;
-    }
-
-    .button-group {
+    .social-icons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 40px;
     }
 
-    .social-button {
+    .social-icons a {
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 8px;
-      background-color: white;
-      padding: 10px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      background: white;
+      padding: 8px 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: transform 0.2s ease;
     }
 
-    .social-button:hover {
-      transform: scale(1.05);
+    .social-icons a:hover {
+      transform: translateY(-2px);
     }
 
-    .social-button img {
-      width: 20px;
-      height: 20px;
+    .social-icons img {
+      height: 24px;
+      width: 24px;
+    }
+
+    .social-icons span {
+      font-weight: bold;
+      font-size: 14px;
+      color: #333;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Welcome to Kings Bin Cleaning</h1>
-    <p>Your local, reliable bin cleaning service.</p>
+  <h1>Welcome to Kings Bin Cleaning</h1>
+  <p>Your local, reliable bin cleaning service.</p>
 
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer">
+  <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
 
-    <div class="social-message">Get a quote from any of our socials:</div>
+  <div class="social-section">
+    <p>Get a quote from any of our socials:</p>
+    <div class="social-icons">
+      <a href="mailto:kingsbincleaning@gmail.com">
+        <img src="gmail.png" alt="Email" />
+        <span>Email</span>
+      </a>
+      <a href="https://wa.me/447931566189" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp" />
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">
+        <img src="facebook.png" alt="Facebook" />
+        <span>Facebook</span>
+      </a>
+    </div>
+  </div>
 
-    <div class="button-group">
-      <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="social-button">
-        <img src="gmail.png" alt="Email Icon"> Email
-      </a>
-      <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="social-button">
-        <img src="whatsapp.png" alt="WhatsApp Icon"> WhatsApp
-      </a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank" class="social-button">
-        <img src="facebook.png" alt="Facebook Icon"> Facebook
-      </a>
-      <a href
+</body>
+</html>
