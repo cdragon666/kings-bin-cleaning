@@ -5,118 +5,117 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kings Bin Cleaning</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #f2f5f3;
       font-family: Arial, sans-serif;
-      overflow: hidden;
+      background-color: #f3f6f5;
+      overflow-x: hidden;
     }
 
     .container {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 30px 20px 80px;
-    }
-
-    h1 {
-      margin-top: 0;
       text-align: center;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    img.flyer {
-      max-width: 100%;
-      width: 350px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    .flyer {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    .socials {
+    .socials-text {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .social-icons {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-top: 20px;
+      margin-top: 10px;
       flex-wrap: wrap;
     }
 
-    .social-button {
+    .social-icons a {
       display: flex;
       align-items: center;
-      padding: 10px 15px;
-      border-radius: 25px;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 24px;
       background-color: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       text-decoration: none;
       font-weight: bold;
-      color: #333;
-      transition: transform 0.2s ease;
+      color: black;
     }
 
-    .social-button img {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
+    .social-icons img {
+      height: 20px;
+      width: auto;
     }
 
-    .social-button:hover {
-      transform: scale(1.05);
-    }
-
-    .phone-number {
-      margin-top: 15px;
-      font-weight: bold;
+    .phone {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
       color: #444;
+      flex-wrap: wrap;
     }
 
-    .floating-review {
-      position: absolute;
-      font-style: italic;
-      color: rgba(0, 0, 0, 0.08);
-      white-space: nowrap;
-      pointer-events: none;
-      animation: float 30s linear infinite;
+    .phone img {
+      width: 20px;
+      height: 20px;
     }
 
-    @keyframes float {
-      from { transform: translate(0, 0); }
-      to {
-        transform: translate(
-          calc(100vw * var(--x-direction)),
-          calc(100vh * var(--y-direction))
-        );
+    @media screen and (max-width: 600px) {
+      .social-icons a {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      .phone {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Floating reviews -->
-  <div class="floating-review" style="top: 10%; left: 5%; --x-direction: 0.7; --y-direction: 0.5;">“Brilliant service, smells lovely!” – Sophie</div>
-  <div class="floating-review" style="top: 40%; left: 60%; --x-direction: -0.4; --y-direction: 0.6;">“Bins sparkling every month!” – Tom</div>
-  <div class="floating-review" style="top: 65%; left: 30%; --x-direction: 0.3; --y-direction: -0.6;">“Never knew bins could be this clean!” – Lisa</div>
-
-  <!-- Main content -->
   <div class="container">
     <h1>Welcome to Kings Bin Cleaning</h1>
     <p>Your local, reliable bin cleaning service.</p>
+    
     <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
 
-    <p style="margin-top: 20px;"><strong>Get a quote from any of our socials:</strong></p>
-    <div class="socials">
-      <a href="mailto:kingsbincleaning@gmail.com" class="social-button">
+    <p class="socials-text">Get a quote from any of our socials:</p>
+    <div class="social-icons">
+      <a href="mailto:kingsbincleaning@gmail.com">
         <img src="gmail.png" alt="Email" /> Email
       </a>
-      <a href="https://wa.me/447931566189" class="social-button" target="_blank">
+      <a href="https://wa.me/447931566189">
         <img src="whatsapp.png" alt="WhatsApp" /> WhatsApp
       </a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/" class="social-button" target="_blank">
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr">
         <img src="facebook.png" alt="Facebook" /> Facebook
       </a>
     </div>
 
-    <p class="phone-number">Or call/text: <strong>07931 566189</strong></p>
+    <div class="phone">
+      <img src="phone.png" alt="Phone Icon" />
+      <span>Call or text: 07931 566189</span>
+    </div>
   </div>
 </body>
 </html>
