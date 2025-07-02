@@ -6,135 +6,132 @@
   <title>Kings Bin Cleaning</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      background: #f0f4f3;
       font-family: Arial, sans-serif;
-      background-color: #f4f7f5;
       text-align: center;
+      margin: 0;
       overflow: hidden;
     }
 
-    .container {
-      position: relative;
-      z-index: 1;
-      padding: 20px;
+    h1 {
+      margin-top: 30px;
+      font-size: 26px;
+    }
+
+    p {
+      margin: 5px 0 20px;
+      font-size: 16px;
+      color: #444;
     }
 
     .flyer {
       max-width: 90%;
-      height: auto;
+      width: 400px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      margin-bottom: 20px;
+      box-shadow: 0 0 20px #ccc;
     }
 
-    .social-buttons {
+    .contact-section {
+      margin-top: 20px;
+    }
+
+    .contact-buttons {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-top: 10px;
     }
 
-    .social-button {
+    .contact-button {
       display: flex;
       align-items: center;
-      background-color: white;
-      border: 1px solid #ccc;
-      border-radius: 25px;
-      padding: 8px 12px;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      background: white;
+      border: 1px solid #ddd;
+      text-decoration: none;
+      font-size: 14px;
+      color: black;
       box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
     }
 
-    .social-button img {
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-button img {
+      width: 20px;
       height: 20px;
-      margin-right: 8px;
     }
 
     .phone-line {
-      margin-top: 5px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       font-size: 14px;
-      color: #555;
+      color: #333;
     }
 
-    .floating-review {
+    .phone-line img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .review {
       position: absolute;
-      font-size: 14px;
-      color: #999;
-      opacity: 0.6;
-      animation: float 20s linear infinite;
+      font-style: italic;
+      font-size: 13px;
+      color: rgba(0, 0, 0, 0.2);
+      animation: float 30s linear infinite;
+      white-space: nowrap;
+      pointer-events: none;
     }
 
     @keyframes float {
-      from {
-        transform: translate(0, 0);
+      0% {
+        transform: translate(0, 0) rotate(0deg);
       }
-      to {
-        transform: translate(var(--x), var(--y));
+      100% {
+        transform: translate(calc(100vw - 50px), calc(100vh - 50px)) rotate(360deg);
       }
     }
   </style>
 </head>
 <body>
-  <!-- Floating reviews -->
-  <div id="reviews-container"></div>
+  <h1>Welcome to Kings Bin Cleaning</h1>
+  <p>Your local, reliable bin cleaning service.</p>
 
-  <div class="container">
-    <h2>Welcome to Kings Bin Cleaning</h2>
-    <p>Your local, reliable bin cleaning service.</p>
+  <img class="flyer" src="flyer.jpg" alt="Kings Bin Cleaning Flyer" />
 
-    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
-
+  <div class="contact-section">
     <p><strong>Get a quote from any of our socials:</strong></p>
-
-    <div class="social-buttons">
-      <div class="social-button">
-        <img src="gmail.png" alt="Email" />
-        <a href="mailto:kingsbincleaning@gmail.com">Email</a>
-      </div>
-      <div class="social-button">
-        <img src="whatsapp.png" alt="WhatsApp" />
-        <a href="https://wa.me/447931566189" target="_blank">WhatsApp</a>
-      </div>
-      <div class="social-button">
-        <img src="facebook.png" alt="Facebook" />
-        <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">Facebook</a>
-      </div>
-      <div class="social-button">
-        <img src="phone.png" alt="Phone" />
-        <a href="tel:07931566189">Call or text: 07931 566189</a>
-      </div>
+    <div class="contact-buttons">
+      <a class="contact-button" href="mailto:kingsbincleaning@gmail.com">
+        <img src="gmail.png" alt="Email" /> Email
+      </a>
+      <a class="contact-button" href="https://wa.me/447931566189">
+        <img src="whatsapp.png" alt="WhatsApp" /> WhatsApp
+      </a>
+      <a class="contact-button" href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr">
+        <img src="facebook.png" alt="Facebook" /> Facebook
+      </a>
+    </div>
+    <div class="phone-line">
+      <img src="phone.png" alt="Phone Icon" />
+      Call or text: <strong>07931 566189</strong>
     </div>
   </div>
 
-  <script>
-    const reviews = [
-      "“Brilliant service, smells lovely!” – Sophie",
-      "“Bins sparkling every month!” – Tom",
-      "“Never knew bins could be this clean!” – Lisa",
-      "“Affordable and reliable, what more could you ask?” – Jake",
-      "“Highly recommend!” – Sarah"
-    ];
+  <!-- Floating Reviews -->
+  <div class="review" style="top:10%; left:5%;">“Brilliant service, smells lovely!” – Sophie</div>
+  <div class="review" style="top:30%; right:10%;">“Bins sparkling every month!” – Tom</div>
+  <div class="review" style="bottom:20%; left:15%;">“Never knew bins could be this clean!” – Lisa</div>
+  <div class="review" style="bottom:5%; right:5%;">“Affordable and reliable, what more could you ask?” – Jake</div>
 
-    const container = document.getElementById('reviews-container');
-
-    reviews.forEach(text => {
-      const el = document.createElement('div');
-      el.className = 'floating-review';
-      el.textContent = text;
-
-      const startX = Math.random() * window.innerWidth;
-      const startY = Math.random() * window.innerHeight;
-      const moveX = (Math.random() - 0.5) * 400 + 'px';
-      const moveY = (Math.random() - 0.5) * 400 + 'px';
-
-      el.style.left = `${startX}px`;
-      el.style.top = `${startY}px`;
-      el.style.setProperty('--x', moveX);
-      el.style.setProperty('--y', moveY);
-
-      container.appendChild(el);
-    });
-  </script>
 </body>
 </html>
