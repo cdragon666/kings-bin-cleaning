@@ -7,142 +7,116 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
       background-color: #f2f5f3;
-      position: relative;
+      font-family: Arial, sans-serif;
       overflow: hidden;
     }
 
-    .reviews-background {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .review {
-      position: absolute;
-      font-size: 14px;
-      opacity: 0.15;
-      font-style: italic;
-      white-space: nowrap;
-      color: #000;
-    }
-
-    @keyframes floatOne {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(40vw, 60vh); }
-    }
-
-    @keyframes floatTwo {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(-30vw, 50vh); }
-    }
-
-    @keyframes floatThree {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(50vw, -40vh); }
-    }
-
-    @keyframes floatFour {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(-60vw, -30vh); }
-    }
-
-    @keyframes floatFive {
-      0%   { transform: translate(0, 0); }
-      100% { transform: translate(20vw, 40vh); }
-    }
-
     .container {
-      text-align: center;
-      padding: 30px 20px 80px;
       position: relative;
-      z-index: 10;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 80px;
     }
 
     h1 {
-      margin-bottom: 10px;
+      margin-top: 0;
+      text-align: center;
     }
 
-    .flyer {
-      max-width: 90%;
-      width: 400px;
+    img.flyer {
+      max-width: 100%;
+      width: 350px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      margin-top: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
     }
 
     .socials {
-      margin-top: 20px;
-    }
-
-    .socials p {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .social-icons {
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
 
-    .social-icons a {
-      text-decoration: none;
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 8px 14px;
+    .social-button {
       display: flex;
       align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 10px 15px;
+      border-radius: 25px;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-decoration: none;
+      font-weight: bold;
+      color: #333;
       transition: transform 0.2s ease;
     }
 
-    .social-icons a:hover {
-      transform: scale(1.05);
-    }
-
-    .social-icons img {
-      width: 20px;
-      height: 20px;
+    .social-button img {
+      width: 24px;
+      height: 24px;
       margin-right: 8px;
     }
 
-    /* ✅ Sticky Call Bar */
-    .call-bar {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: #28a745;
-      color: white;
-      text-align: center;
-      font-size: 16px;
+    .social-button:hover {
+      transform: scale(1.05);
+    }
+
+    .phone-number {
+      margin-top: 15px;
       font-weight: bold;
-      padding: 12px;
-      z-index: 100;
+      color: #444;
     }
 
-    .call-bar a {
-      color: white;
-      text-decoration: none;
+    .floating-review {
+      position: absolute;
+      font-style: italic;
+      color: rgba(0, 0, 0, 0.08);
+      white-space: nowrap;
+      pointer-events: none;
+      animation: float 30s linear infinite;
     }
 
-    .call-bar a:hover {
-      text-decoration: underline;
+    @keyframes float {
+      from { transform: translate(0, 0); }
+      to {
+        transform: translate(
+          calc(100vw * var(--x-direction)),
+          calc(100vh * var(--y-direction))
+        );
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- Floating reviews -->
-  <div class="reviews-background">
-    <div class="review" style="top: 10%; left: 5%; animation: floatOne 30s linear infinite;">“Brilliant service, smells lovely!” – Sophie</div>
-    <div class="review" style="top: 20%; left: 60%; animation: floatTwo 40s linear infinite;">“Bins sparkling every month!” – Tom</div>
-    <div class="review" style="top: 40%; left: 30%; animation: floatThree 50s linear infinite;">“Never knew bins could be this clean!” – Lisa</div>
-    <div class="r
+  <div class="floating-review" style="top: 10%; left: 5%; --x-direction: 0.7; --y-direction: 0.5;">“Brilliant service, smells lovely!” – Sophie</div>
+  <div class="floating-review" style="top: 40%; left: 60%; --x-direction: -0.4; --y-direction: 0.6;">“Bins sparkling every month!” – Tom</div>
+  <div class="floating-review" style="top: 65%; left: 30%; --x-direction: 0.3; --y-direction: -0.6;">“Never knew bins could be this clean!” – Lisa</div>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>Welcome to Kings Bin Cleaning</h1>
+    <p>Your local, reliable bin cleaning service.</p>
+    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
+
+    <p style="margin-top: 20px;"><strong>Get a quote from any of our socials:</strong></p>
+    <div class="socials">
+      <a href="mailto:kingsbincleaning@gmail.com" class="social-button">
+        <img src="gmail.png" alt="Email" /> Email
+      </a>
+      <a href="https://wa.me/447931566189" class="social-button" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp" /> WhatsApp
+      </a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/" class="social-button" target="_blank">
+        <img src="facebook.png" alt="Facebook" /> Facebook
+      </a>
+    </div>
+
+    <p class="phone-number">Or call/text: <strong>07931 566189</strong></p>
+  </div>
+</body>
+</html>
