@@ -21,7 +21,7 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Floating Reviews */
+/* === Floating Reviews === */
 .floating-reviews {
   position: fixed;
   top: 0;
@@ -38,10 +38,11 @@ body {
   font-size: 0.9rem;
   white-space: nowrap;
   padding: 4px 10px;
-  border-radius: 0;
   background: none;
+  border-radius: 0;
 }
 
+/* Unique animation per review */
 .review:nth-child(1) {
   top: 10%; left: 5%;
   animation: float1 60s linear infinite;
@@ -75,72 +76,49 @@ body {
   animation: float8 95s linear infinite;
 }
 
-/* Unique Keyframes */
+/* === Unique float patterns === */
 @keyframes float1 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(20vw, -5vh); }
-  50% { transform: translate(40vw, 10vh); }
-  75% { transform: translate(15vw, -15vh); }
+  50% { transform: translate(30vw, -10vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float2 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(-10vw, 10vh); }
-  50% { transform: translate(-20vw, -15vh); }
-  75% { transform: translate(-15vw, 5vh); }
+  50% { transform: translate(-25vw, 15vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float3 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(15vw, 15vh); }
-  50% { transform: translate(-25vw, 10vh); }
-  75% { transform: translate(10vw, -10vh); }
+  50% { transform: translate(15vw, 25vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float4 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(-30vw, 5vh); }
-  50% { transform: translate(-10vw, -20vh); }
-  75% { transform: translate(-20vw, 10vh); }
+  50% { transform: translate(-30vw, -20vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float5 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(25vw, -10vh); }
-  50% { transform: translate(15vw, 20vh); }
-  75% { transform: translate(5vw, -5vh); }
+  50% { transform: translate(25vw, 30vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float6 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(-15vw, 15vh); }
-  50% { transform: translate(-5vw, -10vh); }
-  75% { transform: translate(-10vw, 10vh); }
+  50% { transform: translate(-15vw, -25vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float7 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(20vw, 20vh); }
-  50% { transform: translate(10vw, -15vh); }
-  75% { transform: translate(-10vw, 15vh); }
+  50% { transform: translate(20vw, -15vh); }
   100% { transform: translate(0, 0); }
 }
-
 @keyframes float8 {
   0% { transform: translate(0, 0); }
-  25% { transform: translate(-25vw, -10vh); }
-  50% { transform: translate(15vw, 25vh); }
-  75% { transform: translate(-20vw, -15vh); }
+  50% { transform: translate(-20vw, 20vh); }
   100% { transform: translate(0, 0); }
 }
 
-/* Footer Section */
+/* === Footer === */
 .contact-footer {
   text-align: center;
   background: #e8f5e9;
@@ -186,7 +164,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Mobile Fixes */
+/* === Mobile Fixes === */
 @media (max-width: 768px) {
   .flyer {
     width: 90%;
