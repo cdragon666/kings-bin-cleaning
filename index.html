@@ -8,10 +8,14 @@
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 100px;
+      padding: 40px 20px;
     }
 
-    .quote-button {
+    h1 {
+      font-size: 32px;
+    }
+
+    .button {
       background-color: #28a745;
       color: white;
       padding: 15px 30px;
@@ -20,12 +24,29 @@
       text-decoration: none;
       display: inline-block;
       font-size: 18px;
+      margin: 10px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
 
-    .quote-button:hover {
+    .button:hover {
       background-color: #218838;
+    }
+
+    .button.whatsapp {
+      background-color: #25D366;
+    }
+
+    .button.whatsapp:hover {
+      background-color: #1ebe5d;
+    }
+
+    .button.flyer {
+      background-color: #007bff;
+    }
+
+    .button.flyer:hover {
+      background-color: #0069d9;
     }
   </style>
 </head>
@@ -34,7 +55,14 @@
   <h1>Welcome to Kings Bin Cleaning</h1>
   <p>Your local, reliable bin cleaning service.</p>
 
-  <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="quote-button">Get a Quote</a>
+  <!-- Email Quote Button -->
+  <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="button">Get a Quote</a>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="button whatsapp">Message Us on WhatsApp</a>
+
+  <!-- Flyer Download -->
+  <a href="flyer.pdf" class="button flyer" download>Download Our Flyer</a>
 
 </body>
 </html>
