@@ -5,171 +5,202 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kings Bin Cleaning</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background-color: #f5f9f7;
+      background-color: #f4f8f6;
       overflow-x: hidden;
     }
 
     .container {
-      position: relative;
-      max-width: 450px;
+      max-width: 600px;
       margin: 0 auto;
-      padding: 20px;
-      z-index: 1;
+      padding: 20px 10px;
       text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+      font-size: 1.4em;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1em;
+      color: #444;
+    }
+
+    .flyer {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .buttons a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 20px;
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+      border: 1px solid #ccc;
+      font-size: 0.9em;
+      transition: background 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background-color: #e6f5e6;
+    }
+
+    .phone {
+      margin-top: 10px;
+      font-size: 0.95em;
+    }
+
+    .phone img {
+      width: 16px;
+      vertical-align: middle;
+      margin-right: 6px;
     }
 
     .floating-review {
       position: absolute;
-      color: rgba(0, 0, 0, 0.2);
       font-style: italic;
-      font-size: 0.8rem;
+      color: #999;
+      font-size: 0.8em;
       white-space: nowrap;
-      z-index: 0;
-    }
-
-    .floating-review span {
-      display: inline-block;
-    }
-
-    .title {
-      font-size: 1.5em;
-      font-weight: bold;
-      margin-bottom: 0.2em;
-    }
-
-    .subtitle {
-      font-size: 1em;
-      margin-bottom: 1em;
-      color: #666;
-    }
-
-    .flyer {
-      max-width: 100%;
-      height: auto;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       z-index: 1;
-      position: relative;
+      pointer-events: none;
     }
 
-    .socials {
-      margin-top: 20px;
-      z-index: 1;
-      position: relative;
-    }
-
-    .socials a {
-      text-decoration: none;
-      margin: 5px;
-      padding: 10px 15px;
-      border-radius: 10px;
-      display: inline-block;
-      background-color: white;
-      color: black;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      font-weight: bold;
-    }
-
-    .phone-line {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .phone-line img {
-      height: 16px;
-      vertical-align: middle;
-    }
-
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
       .container {
-        padding: 10px;
+        padding: 10px 5px;
       }
-
-      .title {
+      h1 {
         font-size: 1.2em;
       }
-
-      .subtitle {
-        font-size: 0.9em;
-      }
-
-      .socials a {
-        padding: 8px 12px;
-        font-size: 0.9em;
+      .buttons a {
+        font-size: 0.85em;
+        padding: 7px 12px;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="title">Welcome to Kings Bin Cleaning</div>
-    <div class="subtitle">Your local, reliable bin cleaning service.</div>
-    <img class="flyer" src="flyer.png" alt="Flyer" />
-    <div class="socials">
-      <div>Get a quote from any of our socials:</div>
-      <a href="mailto:kingsbincleaning@gmail.com">📧 Email</a>
-      <a href="https://wa.me/447931566189" target="_blank">🟢 WhatsApp</a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">🔵 Facebook</a>
-      <div class="phone-line">
-        <img src="phone.png" alt="Phone" />
-        <span>Call or text: <strong>07931 566189</strong></span>
-      </div>
+    <h1>Welcome to Kings Bin Cleaning</h1>
+    <p>Your local, reliable bin cleaning service.</p>
+    <img class="flyer" src="flyer.jpg" alt="Flyer" />
+
+    <p>Get a quote from any of our socials:</p>
+    <div class="buttons">
+      <a href="mailto:kingsbincleaning@gmail.com">
+        <img src="gmail.png" alt="Email" width="20" /> Email
+      </a>
+      <a href="https://wa.me/447931566189" target="_blank">
+        <img src="whatsapp.png" alt="WhatsApp" width="20" /> WhatsApp
+      </a>
+      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">
+        <img src="facebook.png" alt="Facebook" width="20" /> Facebook
+      </a>
     </div>
+
+    <p class="phone">
+      <img src="phone.png" alt="Phone" width="16" /> Call or text: <strong>07931 566189</strong>
+    </p>
   </div>
 
-  <!-- Floating Reviews -->
   <script>
     const reviews = [
       '"Brilliant service, smells lovely!" – Sophie',
       '"Bins sparkling every month!" – Tom',
       '"Affordable and reliable, what more could you ask?" – Jake',
-      '"Love not having to clean my own bins." – Rachel',
+      '"My neighbour signed up after seeing mine!" – Steve',
       '"Never knew bins could be this clean!" – Lisa',
+      '"Love not having to clean my own bins." – Rachel',
       '"Always on time and professional." – Carla',
       '"Professional and eco-friendly!" – Dave',
-      '"My neighbour signed up after seeing mine!" – Steve',
     ];
 
-    for (let i = 0; i < reviews.length; i++) {
-      const span = document.createElement("div");
-      span.className = "floating-review";
-      span.innerHTML = `<span>${reviews[i]}</span>`;
+    const directions = [
+      [1, 1], [-1, 1], [1, -1], [-1, -1],
+      [0.7, 1], [-0.7, 1], [0.7, -1], [-0.7, -1],
+    ];
 
-      // Start at a random position
-      const x = Math.random() * window.innerWidth;
-      const y = Math.random() * window.innerHeight;
-      span.style.left = `${x}px`;
-      span.style.top = `${y}px`;
+    const speeds = 0.4;
+
+    function createReview(text) {
+      const span = document.createElement('span');
+      span.className = 'floating-review';
+      span.textContent = text;
 
       document.body.appendChild(span);
 
-      // Random direction and speed
-      let dx = (Math.random() * 0.4 + 0.2) * (Math.random() < 0.5 ? 1 : -1);
-      let dy = (Math.random() * 0.4 + 0.2) * (Math.random() < 0.5 ? 1 : -1);
+      const angle = Math.floor(Math.random() * directions.length);
+      const [dx, dy] = directions[angle];
+
+      let x = Math.random() * (window.innerWidth - 150);
+      let y = Math.random() * (window.innerHeight - 30);
+
+      span.style.left = `${x}px`;
+      span.style.top = `${y}px`;
 
       function animate() {
-        const rect = span.getBoundingClientRect();
-        let left = parseFloat(span.style.left);
-        let top = parseFloat(span.style.top);
+        x += dx * speeds;
+        y += dy * speeds;
 
-        if (rect.left <= 0 || rect.right >= window.innerWidth) dx *= -1;
-        if (rect.top <= 0 || rect.bottom >= window.innerHeight) dy *= -1;
+        const w = span.offsetWidth;
+        const h = span.offsetHeight;
 
-        span.style.left = `${left + dx}px`;
-        span.style.top = `${top + dy}px`;
+        if (x < 0 || x + w > window.innerWidth) {
+          x = Math.max(0, Math.min(window.innerWidth - w, x));
+          span.dataset.dx = dx * -1;
+        }
+
+        if (y < 0 || y + h > window.innerHeight) {
+          y = Math.max(0, Math.min(window.innerHeight - h, y));
+          span.dataset.dy = dy * -1;
+        }
+
+        dx = parseFloat(span.dataset.dx ?? dx);
+        dy = parseFloat(span.dataset.dy ?? dy);
+
+        span.style.left = `${x}px`;
+        span.style.top = `${y}px`;
 
         requestAnimationFrame(animate);
       }
 
-      animate();
+      span.dataset.dx = dx;
+      span.dataset.dy = dy;
+      requestAnimationFrame(animate);
     }
+
+    reviews.forEach((text, i) => {
+      setTimeout(() => createReview(text), i * 800);
+    });
   </script>
 </body>
 </html>
