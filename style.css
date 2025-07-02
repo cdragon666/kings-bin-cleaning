@@ -31,7 +31,7 @@ body {
   z-index: 1;
 }
 
-/* === Floating Reviews === */
+/* === Desktop Floating Reviews === */
 .floating-reviews {
   position: fixed;
   top: 0;
@@ -53,14 +53,15 @@ body {
   border-radius: 0;
 }
 
-.review:nth-child(1) { top: 10%; left: 5%; animation: float1 25s linear infinite; }
-.review:nth-child(2) { top: 20%; left: 80%; animation: float2 27s linear infinite; }
-.review:nth-child(3) { top: 35%; left: 10%; animation: float3 29s linear infinite; }
-.review:nth-child(4) { top: 50%; left: 70%; animation: float4 26s linear infinite; }
-.review:nth-child(5) { top: 65%; left: 15%; animation: float5 28s linear infinite; }
-.review:nth-child(6) { top: 75%; left: 60%; animation: float6 24s linear infinite; }
-.review:nth-child(7) { top: 85%; left: 30%; animation: float7 30s linear infinite; }
-.review:nth-child(8) { top: 5%;  left: 90%; animation: float8 31s linear infinite; }
+/* Desktop floating animations */
+.floating-reviews .review:nth-child(1) { top: 10%; left: 5%; animation: float1 25s linear infinite; }
+.floating-reviews .review:nth-child(2) { top: 20%; left: 80%; animation: float2 27s linear infinite; }
+.floating-reviews .review:nth-child(3) { top: 35%; left: 10%; animation: float3 29s linear infinite; }
+.floating-reviews .review:nth-child(4) { top: 50%; left: 70%; animation: float4 26s linear infinite; }
+.floating-reviews .review:nth-child(5) { top: 65%; left: 15%; animation: float5 28s linear infinite; }
+.floating-reviews .review:nth-child(6) { top: 75%; left: 60%; animation: float6 24s linear infinite; }
+.floating-reviews .review:nth-child(7) { top: 85%; left: 30%; animation: float7 30s linear infinite; }
+.floating-reviews .review:nth-child(8) { top: 5%;  left: 90%; animation: float8 31s linear infinite; }
 
 /* Unique keyframes */
 @keyframes float1 { 0%{transform:translate(0,0);}50%{transform:translate(30vw,-10vh);}100%{transform:translate(0,0);} }
@@ -79,6 +80,8 @@ body {
   padding: 30px 20px;
   border-top: 2px solid #ccc;
   z-index: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .contact-footer h2 {
@@ -120,7 +123,37 @@ body {
   transform: scale(1.1);
 }
 
-/* === Mobile Fixes === */
+/* === Mobile-only floating reviews in footer === */
+.mobile-floating-reviews {
+  position: relative;
+  height: 100px;
+  margin-top: 20px;
+}
+
+.mobile-floating-reviews .review {
+  position: absolute;
+  animation: bounceFloat 12s linear infinite alternate;
+  font-size: 0.75rem;
+}
+
+.mobile-floating-reviews .review:nth-child(1) { top: 0; left: 5%; animation-delay: 0s; }
+.mobile-floating-reviews .review:nth-child(2) { top: 20%; left: 50%; animation-delay: 2s; }
+.mobile-floating-reviews .review:nth-child(3) { top: 50%; left: 25%; animation-delay: 4s; }
+
+@keyframes bounceFloat {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, -5px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* === Responsive Display Rules === */
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .flyer {
     width: 90%;
@@ -145,5 +178,13 @@ body {
 
   .contact-button span {
     font-size: 0.8rem;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .mobile-only {
+    display: block !important;
   }
 }
