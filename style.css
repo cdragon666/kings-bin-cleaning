@@ -1,110 +1,129 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  overflow-x: hidden;
+  background-color: #f2f2f2;
 }
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 20px;
-  min-height: 100vh;
-  box-sizing: border-box;
 }
 
 .flyer {
-  max-width: 100%;
-  width: 400px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-.footer {
-  background-color: #e6f9e6;
-  text-align: center;
+footer {
+  background-color: #e3fae3;
   padding: 20px;
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
 
-.footer h2 {
+footer h2 {
+  margin: 0 0 10px;
   font-size: 18px;
-  margin-bottom: 10px;
 }
 
-.phone {
-  font-size: 18px;
-  margin-bottom: 15px;
+.phone-number {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.socials {
+.phone-number i {
+  margin-right: 8px;
+}
+
+.social-icons {
   display: flex;
   justify-content: center;
-  gap: 40px;
+  gap: 30px;
   margin-bottom: 10px;
-  flex-wrap: wrap;
 }
 
-.social-icon {
-  text-align: center;
+.social-icons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   color: black;
+  font-size: 14px;
 }
 
-.social-icon img {
+.social-icons img {
   width: 40px;
   height: 40px;
+  margin-bottom: 5px;
 }
 
-.review-banner {
-  display: none;
+.floating-review {
+  position: absolute;
+  font-size: 14px;
+  color: #555;
+  opacity: 0.7;
+  white-space: nowrap;
+  animation: floatRandom 60s linear infinite;
 }
 
-.review-scroll-container {
-  display: none;
+@keyframes floatRandom {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30vw, -20vh);
+  }
+  50% {
+    transform: translate(-20vw, 30vh);
+  }
+  75% {
+    transform: translate(10vw, -10vh);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 @media (max-width: 768px) {
-  .review-scroll-container {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 100%;
-    background-color: #e6f9e6;
-    padding: 10px 0;
-    box-sizing: border-box;
-  }
-
-  .scrolling-reviews {
-    display: inline-block;
-    animation: scrollLeft 30s linear infinite;
-  }
-
-  .scrolling-reviews span {
-    display: inline-block;
-    margin: 0 30px;
-    font-size: 14px;
-    color: #555;
+  .floating-review {
+    animation: scrollLeft 15s linear infinite;
+    font-size: 13px;
+    color: #333;
+    opacity: 1;
   }
 
   @keyframes scrollLeft {
-    from {
-      transform: translateX(100%);
+    0% {
+      left: 100vw;
     }
-    to {
-      transform: translateX(-100%);
+    100% {
+      left: -100vw;
     }
   }
 
-  .flyer {
-    width: 95%;
-    height: auto;
+  .footer-review-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    white-space: nowrap;
+  }
+
+  footer {
+    position: relative;
+    height: 150px;
   }
 }
