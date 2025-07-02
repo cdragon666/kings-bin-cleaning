@@ -2,205 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kings Bin Cleaning</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f8f6;
-      overflow-x: hidden;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px 10px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      margin-bottom: 5px;
-      font-size: 1.4em;
-    }
-
-    p {
-      margin-bottom: 15px;
-      font-size: 1em;
-      color: #444;
-    }
-
-    .flyer {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 10px 0;
-    }
-
-    .buttons a {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 14px;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #000;
-      background: #fff;
-      border: 1px solid #ccc;
-      font-size: 0.9em;
-      transition: background 0.3s ease;
-    }
-
-    .buttons a:hover {
-      background-color: #e6f5e6;
-    }
-
-    .phone {
-      margin-top: 10px;
-      font-size: 0.95em;
-    }
-
-    .phone img {
-      width: 16px;
-      vertical-align: middle;
-      margin-right: 6px;
-    }
-
-    .floating-review {
-      position: absolute;
-      font-style: italic;
-      color: #999;
-      font-size: 0.8em;
-      white-space: nowrap;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 10px 5px;
-      }
-      h1 {
-        font-size: 1.2em;
-      }
-      .buttons a {
-        font-size: 0.85em;
-        padding: 7px 12px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to Kings Bin Cleaning</h1>
-    <p>Your local, reliable bin cleaning service.</p>
-    <img class="flyer" src="flyer.jpg" alt="Flyer" />
 
-    <p>Get a quote from any of our socials:</p>
-    <div class="buttons">
-      <a href="mailto:kingsbincleaning@gmail.com">
-        <img src="gmail.png" alt="Email" width="20" /> Email
-      </a>
-      <a href="https://wa.me/447931566189" target="_blank">
-        <img src="whatsapp.png" alt="WhatsApp" width="20" /> WhatsApp
-      </a>
-      <a href="https://www.facebook.com/people/Kings-bin-cleaning/61554965323792/?_rdr" target="_blank">
-        <img src="facebook.png" alt="Facebook" width="20" /> Facebook
-      </a>
-    </div>
-
-    <p class="phone">
-      <img src="phone.png" alt="Phone" width="16" /> Call or text: <strong>07931 566189</strong>
-    </p>
+  <div class="header">
+    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer" />
+    <a href="https://wa.me/447123456789" class="whatsapp-button">Message us on WhatsApp</a>
   </div>
 
-  <script>
-    const reviews = [
-      '"Brilliant service, smells lovely!" – Sophie',
-      '"Bins sparkling every month!" – Tom',
-      '"Affordable and reliable, what more could you ask?" – Jake',
-      '"My neighbour signed up after seeing mine!" – Steve',
-      '"Never knew bins could be this clean!" – Lisa',
-      '"Love not having to clean my own bins." – Rachel',
-      '"Always on time and professional." – Carla',
-      '"Professional and eco-friendly!" – Dave',
-    ];
+  <div class="floating-reviews">
+    <div class="review">“Amazing service!”</div>
+    <div class="review">“Bins never looked better!”</div>
+    <div class="review">“Highly recommend!”</div>
+    <div class="review">“Quick and professional!”</div>
+  </div>
 
-    const directions = [
-      [1, 1], [-1, 1], [1, -1], [-1, -1],
-      [0.7, 1], [-0.7, 1], [0.7, -1], [-0.7, -1],
-    ];
-
-    const speeds = 0.4;
-
-    function createReview(text) {
-      const span = document.createElement('span');
-      span.className = 'floating-review';
-      span.textContent = text;
-
-      document.body.appendChild(span);
-
-      const angle = Math.floor(Math.random() * directions.length);
-      const [dx, dy] = directions[angle];
-
-      let x = Math.random() * (window.innerWidth - 150);
-      let y = Math.random() * (window.innerHeight - 30);
-
-      span.style.left = `${x}px`;
-      span.style.top = `${y}px`;
-
-      function animate() {
-        x += dx * speeds;
-        y += dy * speeds;
-
-        const w = span.offsetWidth;
-        const h = span.offsetHeight;
-
-        if (x < 0 || x + w > window.innerWidth) {
-          x = Math.max(0, Math.min(window.innerWidth - w, x));
-          span.dataset.dx = dx * -1;
-        }
-
-        if (y < 0 || y + h > window.innerHeight) {
-          y = Math.max(0, Math.min(window.innerHeight - h, y));
-          span.dataset.dy = dy * -1;
-        }
-
-        dx = parseFloat(span.dataset.dx ?? dx);
-        dy = parseFloat(span.dataset.dy ?? dy);
-
-        span.style.left = `${x}px`;
-        span.style.top = `${y}px`;
-
-        requestAnimationFrame(animate);
-      }
-
-      span.dataset.dx = dx;
-      span.dataset.dy = dy;
-      requestAnimationFrame(animate);
-    }
-
-    reviews.forEach((text, i) => {
-      setTimeout(() => createReview(text), i * 800);
-    });
-  </script>
 </body>
 </html>
