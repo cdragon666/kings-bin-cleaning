@@ -9,22 +9,53 @@
       font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px 20px;
+      background-color: #f9f9f9;
     }
 
     h1 {
       font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .flyer-container {
+      position: relative;
+      display: inline-block;
+      max-width: 450px;
+      width: 100%;
+    }
+
+    img.flyer {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .button-group {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .button {
       background-color: #28a745;
       color: white;
-      padding: 15px 30px;
+      padding: 10px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
-      display: inline-block;
-      font-size: 18px;
-      margin: 10px;
+      font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
@@ -40,15 +71,6 @@
     .button.whatsapp:hover {
       background-color: #1ebe5d;
     }
-
-    img.flyer {
-      max-width: 90%;
-      height: auto;
-      margin-top: 30px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
   </style>
 </head>
 <body>
@@ -56,14 +78,14 @@
   <h1>Welcome to Kings Bin Cleaning</h1>
   <p>Your local, reliable bin cleaning service.</p>
 
-  <!-- Email Quote Button -->
-  <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="button">Get a Quote</a>
+  <div class="flyer-container">
+    <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer">
 
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="button whatsapp">Message Us on WhatsApp</a>
-
-  <!-- Flyer Image -->
-  <img src="flyer.jpg" alt="Kings Bin Cleaning Flyer" class="flyer">
+    <div class="button-group">
+      <a href="mailto:Kingsbincleaning@gmail.com?subject=Quote%20Request" class="button">Get a Quote</a>
+      <a href="https://wa.me/447931566189?text=Hi%20Kings%20Bin%20Cleaning%2C%20I%27d%20like%20a%20quote%20please." target="_blank" class="button whatsapp">WhatsApp</a>
+    </div>
+  </div>
 
 </body>
 </html>
