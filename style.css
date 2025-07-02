@@ -34,23 +34,23 @@ body {
 
 .review {
   position: absolute;
-  background: rgba(200, 200, 200, 0.5);
-  color: #333;
-  padding: 8px 12px;
-  border-radius: 8px;
+  color: #555;
   font-size: 0.9rem;
-  animation: floatRandom 60s linear infinite;
   white-space: nowrap;
+  animation: floatRandom 60s linear infinite;
+  padding: 4px 10px;
+  border-radius: 0;
+  background: none;
 }
 
-.review:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-.review:nth-child(2) { top: 20%; left: 80%; animation-delay: 5s; }
-.review:nth-child(3) { top: 35%; left: 10%; animation-delay: 10s; }
-.review:nth-child(4) { top: 50%; left: 70%; animation-delay: 15s; }
-.review:nth-child(5) { top: 65%; left: 15%; animation-delay: 20s; }
-.review:nth-child(6) { top: 75%; left: 60%; animation-delay: 25s; }
-.review:nth-child(7) { top: 85%; left: 30%; animation-delay: 30s; }
-.review:nth-child(8) { top: 5%;  left: 90%; animation-delay: 35s; }
+.review:nth-child(1) { top: 10%; left: 5%; }
+.review:nth-child(2) { top: 20%; left: 80%; }
+.review:nth-child(3) { top: 35%; left: 10%; }
+.review:nth-child(4) { top: 50%; left: 70%; }
+.review:nth-child(5) { top: 65%; left: 15%; }
+.review:nth-child(6) { top: 75%; left: 60%; }
+.review:nth-child(7) { top: 85%; left: 30%; }
+.review:nth-child(8) { top: 5%;  left: 90%; }
 
 @keyframes floatRandom {
   0%   { transform: translate(0, 0); }
@@ -106,7 +106,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Responsive Mobile Fixes */
+/* Mobile Fixes */
 @media (max-width: 768px) {
   .flyer {
     width: 90%;
